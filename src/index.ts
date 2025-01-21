@@ -23,7 +23,7 @@ interface IChangePasswordBody {
 
 interface IPurchaseBody {
   product_id: number;
-  token_username: string;
+  token_user: string;
 }
 
 interface IUser {
@@ -68,7 +68,7 @@ const sql = postgres(
     "postgres://user:password@localhost:5432/shop_database",
 );
 const redis = new Redis(process.env.REDIS_URL || "redis://127.0.0.1:6379");
-const port = process.env.PORT || 8080;
+const port = +(process.env.PORT || 8080);
 
 const REGISTER_SCHEMA = {
   body: {
@@ -117,7 +117,7 @@ const PURCHASE_SCHEMA = {
 const generateToken = () => crypto.randomBytes(32).toString("hex");
 
 const setToken = async (username: string) => {
-  const existing_token: string = await redis.get(`auth:user:${username}`);
+  const existing_token: string | null = await redis.get(`auth:user:${username}`);
   if (existing_token) {
     await redis.del(`auth:token:${existing_token}`);
   }
