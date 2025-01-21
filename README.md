@@ -21,7 +21,7 @@ A TypeScript-based project for managing users, products, and purchases with Fast
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:may00r/shop-test.git
 cd shop-test
 ```
 
@@ -31,9 +31,9 @@ cd shop-test
 npm ci
 ```
 
-3. Create a .env file in the project root and configure the following environment variables:
+3. Create a `.env` file in the project root and configure the environment variables provided in `.env.example` file.
 
-4. Apply the database schema.
+4. Apply the database schema provided in root.
 
 ## Scripts
 
