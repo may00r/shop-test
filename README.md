@@ -60,13 +60,12 @@ POST /change-password: Change the user’s password
 #### Skinport Integration
 
 ```
-GET /items: Fetch items from the Skinport API
+GET /prices: Fetch items from the Skinport API
 ```
 
 #### Product Management
 
 ```
-GET /products: Get all products
 POST /purchase: Purchase a product, updating the user’s balance
 ```
 
